@@ -1,7 +1,47 @@
 /* reset css */
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box ;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+
+.header-wrapper{
+  width: 100vw;
+  background-color: white;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.main-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+  /* background-color: brown; */
+  margin: 0 auto;
+}
+
+.main-header ul{
+  list-style: none;
+  display: flex;
+}
+
+nav ul li{
+  padding-right: 1.5rem;
+}
+
+.main-header a{
+  text-decoration: none;
+  color: black;
+}
+
+.btn{
+  border: 1px solid black;
+  margin: 0.5rem 0;
+  border-radius: .5rem;
+}
+
+.sign-in{
+  padding: 5px 12px;
 }
