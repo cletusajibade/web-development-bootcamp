@@ -1,0 +1,44 @@
+/* Remove default styles */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box ;
+}
+
+/* Type Selector */
+/* h1 {
+  color: blue;
+}
+
+p {
+  font-size: 30px;
+  background-color: aquamarine;
+} */
+
+/* Id Selector */
+#title {
+  color: blue;
+}
+
+#about{
+    color: aqua;
+}
+
+/* Class Selector */
+.links {
+    color: coral;
+}
+
+.another-class{
+    font-size: 30px;
+}
+
+.box{
+    font-size: 50px;
+    font-weight: bold;
+    background-color: aqua;
+    /* padding: 60px 200px 60px 200px; */
+    /* padding: 60px 200px; */
+    padding-left: 100px;
+}
