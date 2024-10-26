@@ -1,0 +1,225 @@
+/* Resetting all css properties in the page */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/*------- Colors ------*/
+:root {
+  --gold-1: #f79821;
+  --grey-1: #333;
+  --grey-2: #444;
+  --grey-3: #767676;
+  --black-1: #191919;
+  --pink-1: #e10992;
+  --pink-2: #b40373;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--grey-1);
+}
+
+/*----------------------*/
+/*------- HEADER ------*/
+/*----------------------*/
+.header-wrapper {
+  width: 100vw;
+  background-color: var(--black-1);
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.main-header ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  padding-right: 1.5rem;
+}
+
+.main-header a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0.5rem 0;
+  border: 1px solid var(--grey-2);
+  border-radius: 0.5rem;
+}
+
+.sign-in {
+  min-width: 3rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  background-color: transparent;
+  line-height: 1.75;
+  padding: 5px 12px;
+  border: 2px solid var(--grey-2);
+}
+
+.right-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.right-buttons .cart {
+  margin-top: 0.5rem;
+  margin-right: 1.5rem;
+}
+
+/*------- END HEADER ------*/
+
+/*----------------------*/
+/*------- MAIN ------*/
+/*----------------------*/
+
+.main {
+  width: 100vw;
+}
+.main-wrapper {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.pricing-form-wrapper {
+  margin: 3rem 0;
+}
+
+.pricing-form-header {
+  text-align: center;
+}
+
+.pricing-form-header h2 {
+  font-family: "Montserrat", "Inter", sans-serif;
+  font-weight: 700;
+  color: #262626;
+  line-height: 1.125;
+  font-size: 3rem;
+}
+
+.pricing-form-header .sub-text {
+  padding: 1rem;
+  font-size: 1.125rem;
+  color: #333333;
+}
+
+.pricing-form-header a {
+  text-decoration: none;
+}
+
+.pricing-form-header a:hover {
+  text-decoration: underline;
+  color: #f79821;
+}
+
+.pricing-form-body {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  margin-top: 3rem;
+}
+
+.pricing-form-body a {
+  text-decoration: none;
+}
+
+.pricing-card {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+}
+
+.pricing-card:not(:last-child) {
+  margin-right: 2.5rem;
+}
+
+.pricing-card .icon {
+  margin-left: -10px;
+}
+
+.pricing-card .title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.75rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015rem;
+}
+
+.pricing-card .sub-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--grey-3);
+}
+
+.price-group {
+  margin-top: 1.5rem;
+  margin-bottom: 1.125rem;
+}
+
+.price-group .price {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.price-group .unit {
+  margin-top: -0.3125rem;
+  font-weight: 400;
+  color: var(--grey-3);
+}
+
+.btn-buy-wrapper {
+  width: 100%;
+  margin-bottom: 1.125rem;
+}
+
+.buy {
+  width: 100%;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: var(--pink-1);
+  line-height: 1.75;
+  border: none;
+  border-radius: 5rem;
+  text-align: center;
+  color: var(--white);
+  padding: 0.5rem 0;
+}
+
+.buy:hover {
+  color: var(--white);
+  background-color: var(--pink-2);
+  cursor: pointer;
+}
+
+.pricing-card-footer ul {
+  padding: 0 0.99rem;
+}
+
+.pricing-card-footer h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.pricing-card-footer li {
+  margin-bottom: 0.5rem;
+}

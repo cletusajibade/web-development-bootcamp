@@ -1,0 +1,168 @@
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold-1: #f79821;
+  --grey-1: #333;
+  --grey-2: #444;
+  --grey-3: #767676;
+  --grey-4: #9e9e9e;
+  --black-1: #191919;
+  --pink-1: #e10992;
+  --pink-2: #b40373;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Montserrat", sans-serif, serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+/* ******************** */
+/* HEADER SECTION */
+/* ******************** */
+
+.header-wrapper {
+  width: 100vw;
+  background-color: white;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+  /* background-color: brown; */
+  margin: 0 auto;
+}
+
+.main-header ul {
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  padding-right: 1.5rem;
+}
+
+.main-header a {
+  /* text-decoration: none; */
+  color: black;
+}
+
+.btn {
+  /* display: inline-block; */
+  border: 1px solid black;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+}
+
+.sign-in {
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 3rem;
+  padding: 5px 12px;
+  border: 2px solid black;
+}
+
+.right-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.right-buttons i {
+  margin-top: 0.5rem;
+  margin-right: 1.5rem;
+  font-size: 22px;
+}
+
+/* ******************** */
+/* END HEADER SECTION */
+/* ******************** */
+
+/* ******************** */
+/* START MAIN SECTION */
+/* ******************** */
+
+.main {
+  /* background-color: black; */
+  width: 100vw;
+}
+
+.main-wrapper {
+  /* background-color: burlywood; */
+  width: 75vw;
+  margin: 0 auto;
+}
+
+.section-wrapper {
+  margin: 3rem 0;
+}
+
+.pricing-form-header {
+  text-align: center;
+}
+
+.pricing-form-header h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.125;
+}
+
+.pricing-form-header .sub-text {
+  padding: 1rem;
+}
+
+.pricing-form-header a:hover {
+  text-decoration: underline;
+  color: #f79821;
+}
+
+.pricing-form-header a {
+  color: blue;
+}
+
+.pricing-form-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 2.5rem;
+}
+
+.pricing-card {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+}
+
+/* .pricing-card:not(:last-child){
+  margin-right: 2.5rem;
+} */
+
+.buy {
+  width: 100%;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: var(--pink-1);
+  line-height: 1.75;
+  border: none;
+  border-radius: 5rem;
+  text-align: center;
+  color: var(--white);
+  padding: 0.5rem 0;
+}
