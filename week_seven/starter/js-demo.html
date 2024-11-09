@@ -98,8 +98,6 @@
         // console.log(mixedObjects);
         // console.log(`Array length: ${mixedObjects.length}`);
 
-
-
         let mixedObjects2 = mixedObjects;
         // console.log(mixedObjects2);
 
@@ -107,8 +105,6 @@
         mixedObjects2 = ['sheep', 'ladybug'];
         // console.log(mixedObjects2);
         // console.log(`mixedObjects2 length: ${mixedObjects2.length}`);
-
-
 
         let emptyArray = [];
 
@@ -118,7 +114,6 @@
         mixedObjects2.push('Cat');
         // console.log(mixedObjects2);
         // console.log(`mixedObjects2 length: ${mixedObjects2.length}`);
-
 
         mixedObjects2.pop();
         // console.log(mixedObjects2);
@@ -135,8 +130,9 @@
             console.log('You can watch this show');
             console.log("Make sure to sign up");
         }
-
-        else { console.log('You are not yet of age'); }
+        else {
+            console.log('You are not yet of age');
+        }
 
         // 2. Switch...case
         /*
@@ -172,19 +168,19 @@
             statements;
         }
             */
-        let students = ['James','Badmus','Felicia','Tayo','Eniola'];
+        let students = ['James', 'Badmus', 'Felicia', 'Tayo', 'Eniola'];
         console.log(students.length);
         let lgth = students.length;
 
-        for(let i=0; i < lgth; i++){
+        for (let i = 0; i < lgth; i++) {
             console.log(`Loop ${i}: ${students[i]}`);
             // console.log(students[i]);
         }
- 
-        students.forEach(function(student){
-            console.log(student);  
+
+        students.forEach(function (student) {
+            console.log(student);
         })
-        
+
     </script>
 </head>
 
