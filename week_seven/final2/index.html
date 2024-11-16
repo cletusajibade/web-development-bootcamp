@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Library</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <p class="alert"></p>
+        <div class="container">
+            <h1>My Book Library</h1>
+            <form class="library-form">
+                <div class="inputs">
+                    <input type="text" id="title" class="title-input" placeholder="Enter book title">
+                    <button type="submit" id="btn-save" class="btn btn-save">
+                        <i class="fa-regular fa-floppy-disk"></i>
+                    </button>
+                </div>
+
+                <article class="entry-container">
+                    <!-- <div class="entry-item">
+                          <div class="title">book title</div>
+                          <div class="action-btns-container">
+                              <a href="#" id="btn-progress" class="btn btn-actions"><i class="fa-solid fa-spinner"></i></a>
+                              <a href="#" id="btn-done" class="btn btn-actions"><i class="fa-regular fa-square-check"></i></a>
+                              <a href="#" id="btn-delete" class="btn btn-actions btn-delete"><i class="fa-solid fa-trash-can"></i></a>
+                          </div>
+                    </div> -->
+                </article>
+                <div class="clear-all">Clear All</div>
+            </form>
+            <div class="shop-now">
+                <button class="shop-now-btn"><span class="shop-now-btn-text" >Shop Now</span></button>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

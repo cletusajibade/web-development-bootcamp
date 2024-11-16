@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  /* font-family:'Lato','Montserrat', Georgia, 'Times New Roman', Times, serif; */
+  font-family:'Montserrat','Lato', Georgia, 'Times New Roman', Times, serif;
+}
+
+.main {
+  max-width: 94.5rem;
+  height: 80vh;
+  background-color: #721c24;
+  padding: 1rem 2rem;
+  margin: 10rem auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 4px rgba(119, 119, 119, 0.2);
+  background-image: url("images/mockup-wall-dark-living-room-interior-background-with-leather-sofa-table-empty-dark-wooden-wall-3d-rendering 1.svg");
+}
+
+.main h1 {
+  padding-bottom: 0.5rem;
+  /* text-align: center; */
+}
+
+.main .inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.container{
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn {
+  font-size: 16px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: coral;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border: none;
+  border-radius: 6px;
+}
+
+.btn-save:hover {
+  background-color: rgb(205, 79, 33);
+}
+.btn-save:active {
+  background-color: coral;
+}
+
+.btn-actions {
+  font-size: 20px;
+  color: coral;
+  border: none;
+}
+
+.btn-actions:hover {
+  color: rgb(205, 79, 33);
+}
+
+.btn-actions:active {
+  color: coral;
+}
+
+.entry-container{
+  visibility: hidden;
+}
+
+.show-entry-container{
+  visibility: visible;
+}
+
+.entry-container .entry-item {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.clear-all{
+  color: coral;
+  cursor: pointer;
+  text-align: center;
+  border-top: 1px solid rgb(191, 189, 189);
+  padding-top: .5rem;
+  margin-top: 2rem;
+  visibility: hidden;
+}
+
+.show-clear-all{
+  visibility: visible;
+}
+
+.action-btns-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.title-input {
+  width: 100%;
+}
+
+/* Alerts */
+.alert{
+  margin-bottom: 1rem;
+  height: 1.25rem;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 0.7rem;
+  border-radius: 0.25rem;
+  text-transform: capitalize;
+}
+
+.alert-danger{
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+.alert-success{
+  color: #155724;
+  background-color: #d4edda;
+}
+
+.shop-now-btn{
+  width: 353px;
+  border: 3px solid #FFFFFF;
+  border-radius: 13px;
+  opacity: 50;
+  padding: 27px 83px;
+  background: linear-gradient(98.14deg, rgba(255, 255, 255, 0.67) 0%, rgba(255, 255, 255, 0.5) 100%);
+  backdrop-filter: blur(6px);
+}
+
+.shop-now-btn-text{
+  font-family: Montserrat, serif;
+  font-size: 35px;
+  font-weight: 700;
+  /*line-height: 43px;*/
+}
