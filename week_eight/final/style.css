@@ -4,17 +4,18 @@
   box-sizing: border-box;
 }
 
-body {
+body{
   /* font-family:'Lato','Montserrat', Georgia, 'Times New Roman', Times, serif; */
-  font-family: "Montserrat", "Lato", Georgia, "Times New Roman", Times, serif;
+  font-family:'Montserrat','Lato', Georgia, 'Times New Roman', Times, serif;
 }
 
 .main {
   width: 40rem;
+  /*background-color: #721c24;*/
   padding: 1rem 2rem;
   margin: 10rem auto;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px 4px rgba(119, 119, 119, 0.2);
+  box-shadow: 0 0 5px 4px rgba(119, 119, 119, 0.2);
 }
 
 .main h1 {
@@ -26,6 +27,11 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
+}
+
+.container{
+  /*max-width: 700px;*/
+  margin: 0 auto;
 }
 
 .btn {
@@ -65,11 +71,11 @@ body {
   color: coral;
 }
 
-.entry-container {
+.entry-container{
   visibility: hidden;
 }
 
-.show-entry-container {
+.show-entry-container{
   visibility: visible;
 }
 
@@ -79,17 +85,17 @@ body {
   padding-top: 1rem;
 }
 
-.clear-all {
+.clear-all{
   color: coral;
   cursor: pointer;
   text-align: center;
   border-top: 1px solid rgb(191, 189, 189);
-  padding-top: 0.5rem;
+  padding-top: .5rem;
   margin-top: 2rem;
   visibility: hidden;
 }
 
-.show-clear-all {
+.show-clear-all{
   visibility: visible;
 }
 
@@ -103,7 +109,7 @@ body {
 }
 
 /* Alerts */
-.alert {
+.alert{
   margin-bottom: 1rem;
   height: 1.25rem;
   display: grid;
@@ -114,17 +120,12 @@ body {
   text-transform: capitalize;
 }
 
-.alert-danger {
+.alert-danger{
   color: #721c24;
   background-color: #f8d7da;
 }
 
-.alert-success {
+.alert-success{
   color: #155724;
   background-color: #d4edda;
-}
-
-
-.btn{
-  border-bottom: 1.5px solid #165A0F
 }

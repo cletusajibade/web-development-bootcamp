@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro To JavaScript</title>
+
+    <!-- <script src="main.js"></script> -->
+
+    <script>
+        // let networkError; 
+        // firstName = "James";
+        // let second_name = "Badmus";
+        // second_name = 23;
+        // second_name = false;
+
+        // country = "Nigeria";
+        // console.log(country);
+
+        // console.log(firstName); console.log(second_name)
+        // networkError = "There is a network error";
+
+        // Comments
+
+        /**
+         * Doc comment
+         */
+
+        //  Variables
+        // Before ES6
+
+        // var has a global scope
+        // if (1 === 1) {
+        //     var age = 20; //global scope
+        //     var age2 = 23; //local scope to this block
+        //     var age3 = 25;//local scope to this block
+
+        //     console.log("In the block: " + age);
+        //     console.log("In the block: " + age2);
+        //     console.log("In the block: " + age3);
+        // }
+        // console.log("Outside the block: " + age);
+        // console.log("Outside the block: " + age2);
+        // console.log("Outside the block: " + age3);
+
+        // Data Types
+        // 1. String
+        // let address = 'Conan Road';
+
+        // Boolean
+        // let isStudent = true;
+
+        // Undefined
+
+        // Null
+        // let location = null;
+
+        // Operators in JavaScript
+
+        // let location1 = " Lagos, Nigeria";
+
+        let num1 = 25;
+        let num2 = 34;
+
+        let result = num1 + num2;
+
+        // Arithmetic Operators
+        // console.log(result);
+        // console.log(num1 - num2);
+        // console.log(num1 * num2);
+        // console.log(num1 ** num2);
+        // console.log(num1 / num2);
+
+        // Remainder
+        num1 = 1;
+        num2 = 2;
+        // console.log(num1 % num2);
+        // console.log(num1 / num2);
+
+        // Increment
+        // console.log(++num1)
+        let incNum1 = num1++;
+        // console.log(incNum1);
+        // console.log(num1);
+
+        // console.log(++num1);
+
+        // num1 = num1 + 1;
+
+        // Arrays
+        // You define an array with square bracket
+        // var 
+        let animal1 = 'Dog';
+        let animals = ['dog', 'bird', 'cat', 'horse'];
+        const mixedObjects = [2, false, "dog", 3.142];
+
+        // console.log(mixedObjects);
+        // console.log(`Array length: ${mixedObjects.length}`);
+
+        let mixedObjects2 = mixedObjects;
+        // console.log(mixedObjects2);
+
+        // mixedObjects = ['brid','Dog'];
+        mixedObjects2 = ['sheep', 'ladybug'];
+        // console.log(mixedObjects2);
+        // console.log(`mixedObjects2 length: ${mixedObjects2.length}`);
+
+        let emptyArray = [];
+
+        // console.log(animals[1]);
+        // Array methods
+        // 1. push function
+        mixedObjects2.push('Cat');
+        // console.log(mixedObjects2);
+        // console.log(`mixedObjects2 length: ${mixedObjects2.length}`);
+
+        mixedObjects2.pop();
+        // console.log(mixedObjects2);
+
+        // Control Structures/FLow
+        // if..else
+        const age = 13;
+        // if(condition){
+        //     //statements
+        // }
+
+        // Code blocks
+        if (age === 13) {
+            console.log('You can watch this show');
+            console.log("Make sure to sign up");
+        }
+        else {
+            console.log('You are not yet of age');
+        }
+
+        // 2. Switch...case
+        /*
+        switch(variable){
+            case condition:
+                statements
+                break;
+            Case condition2:
+            statements
+            break;
+
+            default:
+                message
+        }
+        */
+
+        switch (age) {
+            case 13:
+                console.log("You are of age");
+                break;
+            case 10:
+                console.log("You are not of age");
+                break;
+            default:
+                console.log("Please try again");
+        }
+
+        //    Looping structures
+        //1. For loop
+        // Syntax
+        /*
+        for(init; condition;iter){
+            statements;
+        }
+            */
+        let students = ['James', 'Badmus', 'Felicia', 'Tayo', 'Eniola'];
+        console.log(students.length);
+        let lgth = students.length;
+
+        for (let i = 0; i < lgth; i++) {
+            console.log(`Loop ${i}: ${students[i]}`);
+            // console.log(students[i]);
+        }
+
+        students.forEach(function (student) {
+            console.log(student);
+        })
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
