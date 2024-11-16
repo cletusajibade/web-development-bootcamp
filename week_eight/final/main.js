@@ -1,6 +1,6 @@
 const alert = document.querySelector(".alert");
 const libraryForm = document.querySelector(".library-form");
-const title = document.getElementById("title");
+const inputTitle = document.getElementById("title");
 const entryContainer = document.querySelector(".entry-container");
 const btnSave = document.getElementById("btn-save");
 const btnClearAll = document.querySelector(".clear-all");
@@ -10,66 +10,89 @@ const btnClearAll = document.querySelector(".clear-all");
 // alert.style.display = "none";
 // document.body.style.backgroundColor = "red";
 
+let entryTitle;
 let editFlag = false;
+let entryTitleID = "";
 
 libraryForm.addEventListener("submit", addEntry);
 btnClearAll.addEventListener("click", clearAll);
+window.addEventListener("DOMContentLoaded", setupItemsFromStorage);
 
 function addEntry(e) {
   e.preventDefault();
-  const bookTitle = title.value;
+  const bookTitle = inputTitle.value;
   const id = Math.round(Math.random() * 10000000000).toString();
 
   if (bookTitle && !editFlag) {
+    // createEntryItem(id, bookTitle);
+    /*************************************************************************/
+    /******** Modularize this section with 'createEntryItem(id, bookTitle)' ****/
+    /*************************************************************************/
     const entryItem = document.createElement("div");
     entryItem.classList.add("entry-item");
 
+    //HTML Data Attributes: https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
     const attr = document.createAttribute("data-id");
     attr.value = id;
     entryItem.setAttributeNode(attr);
 
     entryItem.innerHTML = `<div class="title">${bookTitle}</div>
                     <div class="action-btns-container">
-                        <a href="#" class="btn btn-actions btn-progress"><i class="fa-solid fa-spinner"></i></a>
-                        <a href="#" class="btn btn-actions btn-done"><i class="fa-regular fa-square-check"></i></a>
-                        <a href="#" class="btn btn-actions btn-delete"><i class="fa-solid fa-trash-can"></i></a>
+                        <a href="#" class="btn btn-done"><i class="fa-regular fa-square-check"></i></a>
+                        <a href="#" class="btn btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a href="#" class="btn btn-delete"><i class="fa-solid fa-trash-can"></i></a>
                     </div>`;
 
-    // because these buttons were created dynamically, we have access to them
+    // because these buttons below were created dynamically, we only have access to them
     // after they have been rendered, else they will be null.
-    const btnProgress = entryItem.querySelector(".btn-progress");
     const btnDone = entryItem.querySelector(".btn-done");
-    // btnDone.addEventListener("click", function () {
-    //   console.log(getAllBookItems());
-    // });
+
+    const btnEdit = entryItem.querySelector(".btn-edit");
+    btnEdit.addEventListener("click", editBook);
+
     const btnDelete = entryItem.querySelector(".btn-delete");
     btnDelete.addEventListener("click", deleteBook);
 
     entryContainer.appendChild(entryItem);
-    showFormEntries();
-    showAlert("book added to library", "success");
-    saveBookItem(id, bookTitle);
+    /*************************************************************************/
+    /****************************** End module *******************************/
+    /*************************************************************************/
+
+    showEntriesContainer();
+    showAlert("Book added to library", "success");
+    saveBookInStorage(id, bookTitle);
     resetToDefault();
 
     // entryContainer.style.display = "block";
   } else if (bookTitle && editFlag) {
     console.log("editing");
+    entryTitle.innerHTML = bookTitle;
+    showAlert("Book title edited", "success");
+    // Edit local storage
+    editBookInStorage(entryTitleID, bookTitle);
+    resetToDefault();
   } else {
     showAlert("Enter book title", "danger");
   }
 }
 
-function saveBookItem(id, bookTitle) {
-  localStorage.setItem(id, bookTitle);
-  console.log("added to local storage");
+function saveBookInStorage(id, title) {
+  const storageEntry = { id, title };
+
+  let items = getLocalStorage();
+  items.push(storageEntry);
+
+  localStorage.setItem("list", JSON.stringify(items));
+
+  console.log(items);
 }
 
-function getBookItem(id) {
+function getBookFromStorage(id) {
   const item = localStorage.getItem(id);
   return item;
 }
 
-function getAllBookItems() {
+function getAllBooksFromStorage() {
   let items = {};
 
   for (let i = 0; i < localStorage.length; i++) {
@@ -81,9 +104,42 @@ function getAllBookItems() {
   return items;
 }
 
+function deleteBookFromStorage(id) {
+  let items = getLocalStorage();
+  items = items.filter(function (item) {
+    if (item.id !== id) {
+      return item;
+    }
+  });
+
+  // update localStorage
+  localStorage.setItem("list", JSON.stringify(items));
+}
+
+function editBookInStorage(id, title) {
+  let items = getLocalStorage();
+  items = items.map(function (item) {
+    if (item.id === id) {
+      item.title = title;
+    }
+    return item;
+  });
+
+  // update localStorage
+  localStorage.setItem("list", JSON.stringify(items));
+}
+
+function getLocalStorage() {
+  return localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
+}
+
 function resetToDefault() {
-  title.value = "";
+  inputTitle.value = "";
   editFlag = false;
+  entryTitleID = "";
+  btnSave.innerHTML = `<i class="fa-regular fa-floppy-disk"></i>`;
 }
 
 function clearAll() {
@@ -94,11 +150,12 @@ function clearAll() {
     });
   }
 
-  hideFormEntries();
+  hideEntriesContainer();
   showAlert("All books deleted", "success");
   resetToDefault();
-  // localStorage.removeItem('book');
+  localStorage.removeItem("list");
 }
+
 function showAlert(text, type) {
   // alert.style.display = "block";
   alert.textContent = text;
@@ -117,25 +174,74 @@ function showAlert(text, type) {
   }, 3000);
 }
 
+function editBook(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  entryTitle = e.currentTarget.parentElement.previousElementSibling;
+  inputTitle.value = entryTitle.innerHTML;
+  editFlag = true;
+  entryTitleID = element.dataset.id;
+  btnSave.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>`;
+}
+
 function deleteBook(e) {
   const element = e.currentTarget.parentElement.parentElement;
   const id = element.dataset.id;
   console.log(`data id is ${id}`);
   entryContainer.removeChild(element);
   if (entryContainer.children.length === 0) {
-    hideFormEntries();
+    hideEntriesContainer();
   }
   showAlert("Book deleted", "success");
   resetToDefault();
-  // removeFromLocalStorage(id);
+
+  deleteBookFromStorage(id);
 }
 
-function hideFormEntries() {
+function hideEntriesContainer() {
   entryContainer.classList.remove("show-entry-container");
   btnClearAll.classList.remove("show-clear-all");
 }
 
-function showFormEntries() {
+function showEntriesContainer() {
   entryContainer.classList.add("show-entry-container");
   btnClearAll.classList.add("show-clear-all");
+}
+
+function setupItemsFromStorage() {
+  let items = getLocalStorage();
+  if (items.length > 0) {
+    items.forEach(function (item) {
+      createEntryItem(item.id, item.title);
+    });
+  }
+  showEntriesContainer();
+}
+
+function createEntryItem(id, bookTitle) {
+  const entryItem = document.createElement("div");
+  entryItem.classList.add("entry-item");
+
+  //HTML Data Attributes: https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+  const attr = document.createAttribute("data-id");
+  attr.value = id;
+  entryItem.setAttributeNode(attr);
+
+  entryItem.innerHTML = `<div class="title">${bookTitle}</div>
+                    <div class="action-btns-container">
+                        <a href="#" class="btn btn-done"><i class="fa-regular fa-square-check"></i></a>
+                        <a href="#" class="btn btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a href="#" class="btn btn-delete"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>`;
+
+  // because these buttons below were created dynamically, we only have access to them
+  // after they have been rendered, else they will be null.
+  const btnDone = entryItem.querySelector(".btn-done");
+
+  const btnEdit = entryItem.querySelector(".btn-edit");
+  btnEdit.addEventListener("click", editBook);
+
+  const btnDelete = entryItem.querySelector(".btn-delete");
+  btnDelete.addEventListener("click", deleteBook);
+
+  entryContainer.appendChild(entryItem);
 }
