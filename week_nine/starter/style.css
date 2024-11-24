@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 62.5% of 16px = 10px, so 1rem =10px */
+  font-size: 62.5%; 
+}
+
+body {
+  /* font-family:'Lato','Montserrat', Georgia, 'Times New Roman', Times, serif; */
+  font-family: "Montserrat", "Lato", Georgia, "Times New Roman", Times, serif;
+}
+
+.main {
+  width: 35rem;
+  /*background-color: #721c24;*/
+  padding: 1.6rem 3.2rem;
+  margin: 16rem auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 4px rgba(119, 119, 119, 0.2);
+}
+
+.main h1 {
+  font-size: 3.2rem;
+  padding-bottom: 0.8rem;
+  /* text-align: center; */
+}
+
+.main .inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.container {
+  /*max-width: 700px;*/
+  margin: 0 auto;
+}
+
+.btn {
+  font-size: 1.6rem;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-save {
+  font-size: 1.8rem;
+  padding: .3rem .6rem;
+  border: none;
+  border-radius: 6px;
+  background-color: coral;
+}
+
+.btn-save:hover {
+  background-color: rgb(205, 79, 33);
+}
+.btn-save:active {
+  background-color: coral;
+}
+
+.btn-done,
+.btn-edit,
+.btn-delete {
+  font-size: 2rem;
+  color: coral;
+  border: none;
+}
+
+.btn-done{
+  font-size: 2.12rem;
+}
+
+.btn-actions:hover {
+  color: rgb(205, 79, 33);
+}
+
+.btn-actions:active {
+  color: coral;
+}
+
+.entry-container {
+  visibility: hidden;
+}
+
+.show-entry-container {
+  visibility: visible;
+}
+
+.entry-container .entry-item {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.6rem;
+}
+
+.clear-all {
+  font-size: 1.6rem;
+  color: coral;
+  cursor: pointer;
+  text-align: center;
+  border-top: 1px solid rgb(191, 189, 189);
+  padding-top: 0.8rem;
+  margin-top: 3.2rem;
+  visibility: hidden;
+}
+
+.show-clear-all {
+  visibility: visible;
+}
+
+.action-btns-container {
+  display: flex;
+  gap: 0.8rem;
+}
+
+
+.title-input {
+  width: 100%;
+  padding: .5rem .8rem;
+}
+
+.title{
+  font-size: 1.6rem;
+}
+
+/* Alerts */
+.alert {
+  margin-bottom: 1.6rem;
+  height: 2rem;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 1.4rem;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+}

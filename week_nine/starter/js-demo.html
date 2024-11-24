@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+</head>
+
+<body>
+    <form id="student_data">
+
+        <div><label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" class="input-name-first"
+                placeholder="Enter your name" />
+        </div>
+        <div>Last Name <input type="text" id="last_name" name="last_name" class="input-name-last" /> </div>
+
+        <div>
+            Select option:
+            <br>Blue<input type="checkbox" name="options" id="">
+            <br />Yellow<input type="checkbox" name="options" id=""><br />
+        </div>
+        <div>Date of birth:<input type="date" name="dob" id=""><br /></div>
+        <p></p>
+        <button type="submit">Submit</button>
+        <div class="rect" onmouseenter="display();" onmouseleave="removeBg();" style="width: 100px; height: 100px; border: 1px solid black;"></div>
+    </form>
+
+    <script>
+        const form = document.getElementById("student_data");
+        // const firstName = document.getElementById("first_name");
+        const lastName = document.getElementById("last_name");
+
+        const firstName2 = document.querySelector(".input-name-first");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            console.log(firstName2.value);
+            // console.log(lastName.value);
+        });
+
+        let rect = document.querySelector('.rect');
+
+        function display() {
+            // alert("Mouse entered");
+            rect.style.backgroundColor='red';
+        };
+
+        function removeBg(){
+            rect.style.backgroundColor = '';
+
+        }
+
+        function square (x){
+            return x*x;
+        }
+
+        // console.log(square(17));
+
+        let person = {
+            name:"James Badmus",
+            age: 23,
+            retired:false,
+            address:"123 Marshall Blv, Chicago, IL 67363"
+        };
+
+        console.log(person);
+        
+        
+
+    </script>
+</body>
+
+</html>

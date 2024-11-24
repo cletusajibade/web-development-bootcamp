@@ -213,8 +213,9 @@ function setupItemsFromStorage() {
     items.forEach(function (item) {
       createEntryItem(item.id, item.title);
     });
+    
+    showEntriesContainer();
   }
-  showEntriesContainer();
 }
 
 function createEntryItem(id, bookTitle) {
