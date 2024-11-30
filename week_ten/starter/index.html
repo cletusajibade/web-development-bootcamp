@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React/NextJs Intro</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+
+    <script type="text/jsx">
+        const app = document.getElementById('app');
+
+        function Header(props){
+            const {title, age} = props; 
+
+            //const title  = props.title;
+            //const age  =  props.age;
+
+            console.log(props);
+
+            return (<h1>{title} <br/> {age}</h1>);
+        }
+
+        function Home(){
+            return (
+                <div> 
+                    <Header title="Welcome to Javascript and React Framework" age="25"/> 
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(app);
+        root.render(<Home/>);
+    </script>
+</body>
+
+</html>

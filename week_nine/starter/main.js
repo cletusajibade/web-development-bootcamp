@@ -13,7 +13,6 @@ let entryTitleID = "";
 // Registering events on elements
 libraryForm.addEventListener("submit", addEntry);
 
-
 // function declaration
 function addEntry(e) {
   e.preventDefault();
@@ -38,7 +37,13 @@ function addEntry(e) {
                     </div>`;
 
     const btnDelete = entryItem.querySelector(".btn-delete");
-    btnDelete.addEventListener("click", deleteBook);
+    // btnDelete.addEventListener("click", deleteBook);
+    btnDelete.addEventListener("click", function () {
+      entryContainer.removeChild(entryItem);
+
+      console.log(entryItem.dataset.id);
+      console.log(id);
+    });
 
     entryContainer.appendChild(entryItem);
     entryContainer.classList.add("show-entry-container");
@@ -50,4 +55,3 @@ function addEntry(e) {
     entryContainer.removeChild(element);
   }
 }
-
