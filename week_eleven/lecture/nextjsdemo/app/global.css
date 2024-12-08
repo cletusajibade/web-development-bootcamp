@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 62.5% of 16px = 10px, so 1rem =10px */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.wrapper {
+  width: 50rem;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.like-button{
+    margin-top: 2rem;
+}
+
+footer {
+  margin-top: 2rem;
+  border-top: 1px solid black;
+}

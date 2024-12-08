@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React/NextJs Intro</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+
+    <script type="text/babel">
+        const app = document.getElementById('app');
+
+        function Header(props) {
+            const { title, age } = props;
+
+            // console.log(props);
+
+            return (
+                <div>
+                    <div>
+                        <h1>{title} <br /> {age}</h1>
+                    </div>
+                    <div>Another component</div>
+                </div>
+            );
+        }
+
+        function Home() {
+            const [likes, setLikes] = React.useState(0);
+            const [isStudent, setStudent] = React.useState(false);
+
+            let person = {
+                name: "James Bond",
+                occupation: "Student",
+                location: "London"
+            }
+
+            // likes++
+            // likes = likes + 1;
+
+            function handleClick() {
+                setLikes(likes + 1);
+                // setLikes(prevLikes => prevLikes + 1);
+
+                if (isStudent) {
+                    console.log(" you are qualified");
+                }
+                else {
+                    setStudent((isStudent) => {
+                        isStudent = true;
+                    })
+                }
+
+
+                console.log("button clicked");
+            }
+
+            return (
+                <div>
+                    <Header title="Welcome to Javascript and React Framework" age="25" />
+                    <button onClick={handleClick}>Likes({likes})</button>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(app);
+        root.render(<Home />);
+    </script>
+</body>
+
+</html>

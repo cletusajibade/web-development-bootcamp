@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React/NextJs Intro</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+
+    <script type="text/babel">
+        const app = document.getElementById('app');
+
+        function Header({title}){
+            return (<h1>{title}</h1>);
+        }
+
+        function HomePage(){
+
+            /** ------------------ **/
+            /** [5]. State and hooks 
+                - React has a set of functions called hooks.
+                - Hooks allow you to add additional logic such as state to your components. 
+                - You can think of state as any information in your UI that changes over time, usually triggered by user interaction.
+                - The React hook used to manage state is called: useState()
+            **/
+
+            //- [5.1]: Add useState() to your project.
+            //- It returns an array, and you can access and use those array values inside your component using array destructuring
+            //- i.  The first item in the array is the state "value", which you can name anything. It's recommended to name it something descriptive:
+            //- ii. The second item in the array is a setter function to update the value. You can name the update function anything, 
+                            //- but it's common to prefix it with "set" followed by the name of the state variable you're updating
+            //- iii.You can also take the opportunity to add the initial value of your likes state to 0:
+
+            const [likes, setLikes] = React.useState(0);
+
+            /** ----------------------**/
+            /** End State and hooks. **/
+            /** ----------------------**/
+
+
+            let person = {
+                name: "James Bond",
+                age: 25,
+                location:"London",
+            };
+
+            /** --------------------- **/
+            /** [3]. Handling the events.
+                - You can define a function to "handle" events whenever they are triggered. 
+            **/
+            function handleClick(){
+                console.log("increment like button");
+
+                {/* [5.2] - Finally, you can call your state updater function, "setLikes" in your HomePage component. 
+                        - the appropriate place to call this function is where the click event is handled.
+                */}
+
+                setLikes(prevLikes=> prevLikes +1);
+
+                 {/* - Notes: 
+                    1. You cannot do likes++ because in React, state is considered read-only, so you should replace it rather than mutate your existing objects
+                        - https://react.dev/learn/updating-objects-in-state, https://react.dev/reference/react/useState
+                    2. When state changes, React re-renders the component.
+                    3. You should always use the setter function to update your state.
+                    4. If your new state value depends on the previous state, you can pass a function to the setter function:setLikes(prevLikes=> prevLikes +1);
+
+                    Read more about State Management in React:
+                    1. https://react.dev/learn/adding-interactivity
+                    2. https://react.dev/learn/managing-state
+                 */}
+                
+            }
+            /** --------------------------**/
+            /** End Handling the events. **/
+            /** --------------------------**/
+
+
+            return (
+                <div> 
+                    <Header title="React/NextJs Demo"/> 
+                    <div>Name: {person.name} <br/> Age: {person.age} <br/> Location: {person.location}</div>
+                    
+                     /** ------------------ **/
+                    {/** [1]. Add a button. **/}
+                    {/** [2]. Listen to events using the onClick event. 
+                        - In React, event names are camelCased.
+                    **/}
+                    <button onClick={handleClick /** [4]. Call the handleClick function when the 'onClick' event is triggered. 
+                                                        - Note that the function does not have parentheses/brackets "()" at this point, 
+                                                        - if it does, it is immediately executed 
+                                                        - Why: In React, event handlers are passed as references to functions, not as function calls,
+                                                            this allowes React to call it later when the event actually occurs (i.e., when the button is clicked).
+                                                            https://react.dev/learn/responding-to-events
+                                                        **/}>
+                        Like({/* [5.1.iv] - Check that the initial state is working by using the state variable inside your component. */}{likes}) 
+                    </button>
+                        /** ----------------------**/
+                        /** End Button and actions. **/
+                        /** ----------------------**/
+
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage/>);
+    </script>
+</body>
+
+</html>
