@@ -54,11 +54,8 @@
                     console.log(" you are qualified");
                 }
                 else {
-                    setStudent((isStudent) => {
-                        isStudent = true;
-                    })
+                    setStudent(!isStudent); //toggle the boolean state variable
                 }
-
 
                 console.log("button clicked");
             }
@@ -66,7 +63,7 @@
             return (
                 <div>
                     <Header title="Welcome to Javascript and React Framework" age="25" />
-                    <button onClick={handleClick}>Likes({likes})</button>
+                    <button onClick={handleClick}>Likes({likes}{isStudent})</button>
                 </div>
             );
         }
