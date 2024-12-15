@@ -1,0 +1,69 @@
+Class 12
+----------
+1. Final class, Cash/gift card prizes
+2. Final project discussion
+    * College Application Tracker
+        - UI to enter details of college application
+        - Ability to perform CRUD operation
+        - 
+3. Give us your feedback by filling the Survey: https://forms.gle/Gwrmv3ntXzyZ5gRL6
+
+
+Installing Nextjs
+-----------------
+Automatic Installtion: npx create-next-app@latest
+
+What is npx:
+In Node.js, "npx" stands for "Node Package eXecute" and is a 
+command-line utility that allows you to run any JavaScript 
+package available on the npm registry directly without needing 
+to install it globally on your system first; essentially, 
+it lets you execute packages "on-demand" from the npm registry.
+
+Key points about npx:
+-  No need for global installation:
+-  You can use npx to run a package even if you haven't installed it globally on your machine, making it convenient for one-off tasks or trying out new tools.
+    
+Comes with npm:
+- npx is bundled with npm version 5.2 and above, so you likely already have it available if you're using a recent version of Node.js.
+
+After the prompts, 'create-next-app' will create a folder with your project name and install the required dependencies.
+
+Likely Issues/Errors
+---------------------
+1. Parsing error within your source code
+    - cannot find module next/babel
+        - This is ESLint error 
+        - ESLint is a static code analysis tool that helps development teams identify and fix issues in JavaScript and JSX code (Read more: https://eslint.org/)
+        - Solution: update .eslintrc.json file (Read more: https://stackoverflow.com/questions/68163385/parsing-error-cannot-find-module-next-babel)
+
+2. In case you run into permission issues on running your project (eg '.next' folder not being created), 
+    run the command: 
+        i. `ls -la` to check ownership of the application directory
+        ii. `sudo chown -R $USER <project_directory>` to change ownership of the project folder
+
+3. Hydration failed error on brower: 
+    - Read more https://github.com/facebook/react/issues/24519#issuecomment-1122780621
+    - May also be caused by brower extensions: 
+       i. https://nextjs.org/docs/messages/react-hydration-error
+       ii. https://www.reddit.com/r/nextjs/comments/1gabiqn/hydration_error_when_installing_nextjs_15/?rdt=41386
+    - Alternate solution: 
+        update layout.js file - <html lang='en' suppressHydrationWarning>
+        * This didn't work for me. Extensions were my issues.
+    - Note: this only happens in dev mode, not in production
+    - In case the error bothers you, you can also run your browser in incognito mode/private browswing mode
+        * This disables all extensions
+
+Setting Up PostgreSQL in the Cloud
+--------------------------------
+1. Set up a Nenon account (Go to https://neon.tech and signup/login)
+2. Create a database and get your connection string
+    - Put your connection string in your .env.local failed
+    - Format: DATABASE_URL="postgresql://<user>:<password>@<endpoint_hostname>.neon.tech:<port>/<dbname>?sslmode=require"
+3. Add project dependencies using one of the following commands:
+    - Neon serverless driver: npm install @neondatabase/serverless
+    - Node-posgres: npm install pg (optional)
+
+4. Set up your form with Nextjs Server Actions (https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
+
+5. Implement Next.js Server Actions
