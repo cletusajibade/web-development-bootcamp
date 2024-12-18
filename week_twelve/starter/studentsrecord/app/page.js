@@ -7,18 +7,18 @@ export default function Home() {
 
     const sql = neon(process.env.DATABASE_URL);
 
-    // const schema = `CREATE TABLE IF NOT EXISTS students (
-    //                 id SERIAL PRIMARY KEY,
-    //                 first_name VARCHAR(50) NOT NULL,
-    //                 last_name VARCHAR(50) NOT NULL,
-    //                 date_of_birth DATE NOT NULL,
-    //                 address TEXT NULL,
-    //                 level VARCHAR(50) NOT NULL,
-    //                 state VARCHAR(50) NOT NULL,
-    //                 country VARCHAR(50) NOT NULL
-    //             )`;
+    const schema = `CREATE TABLE IF NOT EXISTS students (
+                    id SERIAL PRIMARY KEY,
+                    first_name VARCHAR(50) NOT NULL,
+                    last_name VARCHAR(50) NOT NULL,
+                    date_of_birth DATE NOT NULL,
+                    address TEXT NULL,
+                    level VARCHAR(50) NOT NULL,
+                    state VARCHAR(50) NOT NULL,
+                    country VARCHAR(50) NOT NULL
+                )`;
 
-    // await sql(schema);
+    await sql(schema);
 
     await sql(
       "INSERT INTO students(first_name, last_name, date_of_birth, address, level, state, country) VALUES($1, $2,$3,$4,$5,$6,$7)",

@@ -1,11 +1,26 @@
 Class 12
 ----------
 1. Final class, Cash/gift card prizes
-2. Final project discussion
-    * College Application Tracker
-        - UI to enter details of college application
-        - Ability to perform CRUD operation
-        - 
+2. Final project: Student Management System
+
+    Project Features
+    ----------------
+    - UI to enter details of college students
+        Firts Name, Last name, Date of Birth, Address etc
+    - Ability to perform CRUD (create, read, update, delete) operations on student records
+    - Ability to perform data search and retrieval
+        Be able to search the system by student ID, Name etc
+    - A view to display the search result in an Html table.
+
+    Database
+    --------
+    - Set up a managed postgres database on Neon (https://neon.tech/) to store your records.
+
+    Submission Deadline
+    -------------------
+    - Saturday, December 21, 11:59pm CST
+
+
 3. Give us your feedback by filling the Survey: https://forms.gle/Gwrmv3ntXzyZ5gRL6
 
 
